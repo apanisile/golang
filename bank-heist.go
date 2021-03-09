@@ -24,5 +24,38 @@ func main() {
 	} else if isHeistOn == false {
 		fmt.Println("Vault can't be opened...")
 	}
+
 	fmt.Println("State of Heist: ", isHeistOn)
+
+	leftSafely := rand.Intn(5)
+	if isHeistOn == true {
+		switch leftSafely {
+		case 0:
+			isHeistOn = false
+			fmt.Println("Plan a better heist...")
+		case 1:
+			isHeistOn = false
+			fmt.Println("Turns out vault doors don't open from the inside...")
+		case 2:
+			isHeistOn = false
+			fmt.Println("Plan a better heist...")
+		case 3:
+			isHeistOn = false
+			fmt.Println("Ghen ghen...")
+		case 4:
+			isHeistOn = false
+			fmt.Println("What is going on?")
+		case 5:
+			isHeistOn = false
+			fmt.Println("This wasnt what we planned...")
+		default:
+			fmt.Println("Start the getaway car")
+		}
+
+		if isHeistOn == false {
+			amtStolen := 10000 + rand.Intn(1000000)
+			fmt.Println("Total amount stolen:", "$", amtStolen)
+		}
+	}
+
 }
